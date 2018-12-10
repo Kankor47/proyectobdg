@@ -8,10 +8,10 @@ class ModelMantenimiento {
     public function getMantenimientos() {
 
         $pdo = Database::connect();
-        $sql = "SELECT m.id_mant,c.descripcion_coche,t.tip_desc,m.descripcion_dano,m.fecha_ing,m.estado,m.fecha_salida 
-            FROM tbl_mantenimiento m 
-            INNER JOIN tbl_coche c on m.id_coche=c.id_coche 
-            INNER JOIN tbl_tipo t on c.id_tipo=t.id_tipo order by m.id_mant";
+        $sql = "select m.id_mant,c.descripcion_coche,t.tip_desc,m.descripcion_dano,m.fecha_ing,m.estado,m.fecha_salida 
+            from tbl_mantenimiento m 
+            inner join tbl_coche c on m.id_coche=c.id_coche 
+            inner join tbl_tipo t on c.id_tipo=t.id_tipo order by m.id_mant";
         $resultado = $pdo->query($sql);
         //transformamos los registros en objetos de tipo Producto:
         $listado = array();

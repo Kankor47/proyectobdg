@@ -11,7 +11,7 @@ class ModelCoches {
     public function getCoches() {
      
         $pdo = Database::connect();
-        $sql = "SELECT c.id_coche, t.tip_desc, c.descripcion_coche,c.fecha_adquisicion from tbl_coche c INNER JOIN tbl_tipo t ON c.id_tipo=t.id_tipo";
+        $sql = "select c.id_coche, t.tip_desc, c.descripcion_coche,c.fecha_adquisicion from tbl_coche c inner join tbl_tipo t ON c.id_tipo=t.id_tipo";
         $resultado = $pdo->query($sql);
         $listado = array();
         foreach ($resultado as $res) {

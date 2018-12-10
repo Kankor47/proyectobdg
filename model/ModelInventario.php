@@ -8,7 +8,7 @@ class ModelInventario {
     public function getInventario() {
 
         $pdo = Database::connect();
-        $sql = "SELECT C.id_coche,T.tip_desc,C.descripcion_coche,C.fecha_adquisicion, M.descripcion_dano,M.fecha_ing,M.fecha_salida,M.estado FROM tbl_coche C JOIN tbl_mantenimiento M ON C.id_coche=M.id_coche JOIN tbl_tipo T ON C.id_tipo=T.id_tipo";
+        $sql = "select C.id_coche,T.tip_desc,C.descripcion_coche,C.fecha_adquisicion, M.descripcion_dano,M.fecha_ing,M.fecha_salida,M.estado from tbl_coche C join tbl_mantenimiento M on C.id_coche=M.id_coche join tbl_tipo T on C.id_tipo=T.id_tipo";
         $resultado = $pdo->query($sql);
         $listado = array();
         foreach ($resultado as $res) {
